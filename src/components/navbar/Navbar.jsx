@@ -6,7 +6,7 @@ import ThemeToggle from "@/components/themeToggle/ThemeToggle";
 import Link from "next/link";
 const Navbar = () => {
     return (
-        <div className={styles.container}>Navbar
+        <div className={styles.container}>
             <div className={styles.social}>
                 <Image src="/facebook.png" alt="Facebook" width={24} height={24}/>
                 <Image src="/instagram.png" alt="Facebook" width={24} height={24}/>

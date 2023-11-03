@@ -25,4 +25,5 @@
     display: flex;
     gap: 20px;
     flex: 1;
+    font-size: 20px;
 }
