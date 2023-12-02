@@ -2,6 +2,8 @@ import { db } from "../db.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+
+//----------------REGISTRAR USUÁRIO ----------------//
 export const register = (req, res) => {
   //CHECK EXISTING USER
   const q = "SELECT * FROM users WHERE email = ? OR username = ?";
@@ -10,7 +12,7 @@ export const register = (req, res) => {
     if (err) return res.status(500).json(err);
     if (data.length) return res.status(409).json("O usuario já existe!");
 
-    //Hash the password and create a user
+    //Hasha - senha e crie um usuário
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
 
@@ -24,16 +26,18 @@ export const register = (req, res) => {
   });
 };
 
+//----------------LOGAR USUÁRIO ----------------//
 export const login = (req, res) => {
-  //CHECK USER
+  //Verificar usuário
 
   const q = "SELECT * FROM users WHERE username = ?";
 
   db.query(q, [req.body.username], (err, data) => {
     if (err) return res.status(500).json(err);
-    if (data.length === 0) return res.status(404).json("Usuário não encontrado!");
+    if (data.length === 0)
+      return res.status(404).json("Usuário não encontrado!");
 
-    //Check password
+    //Verificar senha
     const isPasswordCorrect = bcrypt.compareSync(
       req.body.password,
       data[0].password
@@ -54,6 +58,7 @@ export const login = (req, res) => {
   });
 };
 
+//----------------DESLOGAR USUÁRIO ----------------//
 export const logout = (req, res) => {
   res.clearCookie("access_token",{
     sameSite:"none",

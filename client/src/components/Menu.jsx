@@ -4,6 +4,14 @@ import React, { useEffect, useState } from "react";
 const Menu = ({cat}) => {
   const [posts, setPosts] = useState([]);
 
+  const mystyle = {
+    background: "linear-gradient(271deg, #89d3d4, #b4b4b4",
+    border: "none",
+    borderRadius: "10px",
+    marginTop: "10px",
+
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -45,8 +53,8 @@ const Menu = ({cat}) => {
     <div className="menu">
       <h1>Outras postagens que você pode gostar</h1>
       {posts.map((post) => (
-        <div className="post" key={post.id}>
-          <img src={`../upload/${post?.img}`} alt="" />
+        <div className="post" key={post.id} >
+          <img style={mystyle} src={`../upload/${post?.img}`} alt="" />
           <h2>{post.title}</h2>
           <button>Leia mais</button>
         </div>

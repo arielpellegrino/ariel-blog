@@ -12,6 +12,14 @@ import DOMPurify from "dompurify";
 const Single = () => {
   const [post, setPost] = useState({});
 
+  const mystyle = {
+    background: "linear-gradient(271deg, #f04acc, #8441e1)",
+    border: "none",
+    borderRadius: "10px",
+    marginTop: "10px",
+
+  };
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -48,12 +56,9 @@ const Single = () => {
   return (
     <div className="single">
       <div className="content">
-        <img src={`../upload/${post?.img}`} alt="" />
+        <img style={mystyle} src="" alt="" />
         <div className="user">
-          {post.userImg && <img
-            src={post.userImg}
-            alt=""
-          />}
+          {post.userImg && <img src={post.userImg} style={mystyle}   alt=""/>}
           <div className="info">
             <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>

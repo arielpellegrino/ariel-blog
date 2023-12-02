@@ -1,5 +1,5 @@
 $lightGreen: #1c1c1c;
-$blackSpace: #1b2042;
+$blackSpace: #9f9f9f;
 $bgWhite: #f0f0f0;
 $outColor:#f0f0f0;
 $teste: #10ea00;
@@ -12,6 +12,11 @@ $teste3: #fff500;
   justify-content: center;
   .container {
     width: 1024px;
+
+    imgColor {
+      //background-color: #e71919;
+      //background-image: url(https://cdn3.iconfinder.com/data/icons/communication-media-malibu-vol-1/128/blog-512.png),
+    }
 
     .link {
       text-decoration: none;
@@ -93,26 +98,42 @@ $teste3: #fff500;
             font-weight: 300;
           }
 
+          .logado{
+            color: #2a72a5;
+            font-weight: 500;
+          }
+
+          .logout{
+            font-size: 18px;
+            font-weight: 400;
+            color: #e71919;
+          }
+
+          .separetor{
+            font-weight: bold;
+            margin-right: 10px;
+          }
+
           span {
             cursor: pointer;
           }
 
           .write {
             background-color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            border-radius: 5px;
+            width: 70px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 300;
+            font-weight: 400;
             border: 1px solid white;
             transition: 0.5s ease-in;
+            color: #2092f3;
 
             &:hover {
-              color: $lightGreen;
-              border: 1px solid;
-              transition: 0.5s ease-in-out;
+              transition: 0.2s ease-out;
+
             }
           }
         }
@@ -122,9 +143,12 @@ $teste3: #fff500;
     //FOOTER
 
     footer {
-      margin-top: 100px;
+      margin-top: 20%;
+      border-radius:5px;
       padding: 20px;
-      background-color: $lightGreen;
+      background: rgb(255,255,255);
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.979411833092612) 63%);
+      border: 1px solid $blackSpace;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -156,15 +180,43 @@ $teste3: #fff500;
             flex: 2;
             position: relative;
 
+
+
             &::after {
               content: "";
               width: 100%;
               height: 100%;
-              background-color: $lightGreen;
+              background: linear-gradient(271deg, #71df5f, #8441e1);
+              background-size: 400% 400%;
+
+              -webkit-animation: img 30s ease infinite;
+              -moz-animation: img 30s ease infinite;
+              animation: img 30s ease infinite;
+
+              //background: rgb(147,70,200);
+              //background: linear-gradient(90deg, rgba(147,70,200,1) 0%, rgba(68,66,67,1) 42%, rgba(57,166,149,1) 75%, rgba(74,74,74,1) 100%);
+              border-radius:5px;
               position: absolute;
               top: 20px;
               left: -20px;
               z-index: -1;
+            }
+
+
+            @-webkit-keyframes img {
+              0%{background-position:0% 50%}
+              50%{background-position:100% 50%}
+              100%{background-position:0% 50%}
+            }
+            @-moz-keyframes img {
+              0%{background-position:0% 50%}
+              50%{background-position:100% 50%}
+              100%{background-position:0% 50%}
+            }
+            @keyframes img {
+              0%{background-position:0% 50%}
+              50%{background-position:100% 50%}
+              100%{background-position:0% 50%}
             }
 
             img {
@@ -173,6 +225,8 @@ $teste3: #fff500;
               object-fit: cover;
             }
           }
+
+
 
           .content {
             flex: 3;
@@ -284,6 +338,7 @@ $teste3: #fff500;
             width: 100%;
             height: 200px;
             object-fit: cover;
+            //background-color: #e71919;
           }
 
           h2 {
@@ -324,13 +379,15 @@ $teste3: #fff500;
 
         input {
           padding: 10px;
+          border-radius:5px;
           border: 1px solid;
         }
 
         .editorContainer {
           height: 300px;
           overflow: scroll;
-          border: 1px solid lightgray;
+          border-radius:5px;
+          border: 1px solid $blackSpace;
 
           .editor {
             height: 100%;
@@ -346,14 +403,15 @@ $teste3: #fff500;
         gap: 20px;
 
         .item {
-          border: 1px solid $lightGreen;
+          border-radius:5px;
+          border: 1px solid $blackSpace;
           padding: 10px;
           flex:1;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           font-size: 12px;
-          color: #1b2042;
+          color: $blackSpace;
 
           h1{
             font-size: 20px;
@@ -367,6 +425,7 @@ $teste3: #fff500;
           .buttons{
             display: flex;
             justify-content: space-between;
+            border-radius:5px;
 
             :first-child{
               cursor: pointer;

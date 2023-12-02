@@ -102,7 +102,7 @@ const Write = () => {
               id="art"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="art">.NET</label>
+            <label htmlFor="art">artes</label>
           </div>
           <div className="cat">
             <input
@@ -113,7 +113,7 @@ const Write = () => {
               id="science"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="science">JavaScript</label>
+            <label htmlFor="science">ciencias</label>
           </div>
           <div className="cat">
             <input
@@ -124,7 +124,7 @@ const Write = () => {
               id="technology"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="technology">ReactJS</label>
+            <label htmlFor="technology">tecnologia</label>
           </div>
           <div className="cat">
             <input
@@ -135,7 +135,7 @@ const Write = () => {
               id="cinema"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="cinema">VueJS</label>
+            <label htmlFor="cinema">cinema</label>
           </div>
           <div className="cat">
             <input
@@ -146,7 +146,7 @@ const Write = () => {
               id="design"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="design">Banco de Dados</label>
+            <label htmlFor="design">design</label>
           </div>
           <div className="cat">
             <input
@@ -157,7 +157,7 @@ const Write = () => {
               id="food"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="food">Outros</label>
+            <label htmlFor="food">comida</label>
           </div>
         </div>
       </div>

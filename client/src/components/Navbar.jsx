@@ -15,37 +15,51 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="links">
-          <Link className="link" to="/?cat=art">
+          <Link className="link" to="/">
             <h6>HOME</h6>
           </Link>
+          <Link className="link" to="/?cat=art">
+            <h6>artes</h6>
+          </Link>
           <Link className="link" to="/?cat=science">
-            <h6>CONTATO</h6>
+            <h6>ciencias</h6>
           </Link>
           <Link className="link" to="/?cat=technology">
-            <h6>SOBRE</h6>
+            <h6>tecnologia</h6>
           </Link>
           <Link className="link" to="/?cat=cinema">
-            <h6>LINK1</h6>
+            <h6>cinema</h6>
           </Link>
           <Link className="link" to="/?cat=design">
-            <h6>LINK2</h6>
+            <h6>design</h6>
           </Link>
           <Link className="link" to="/?cat=food">
-            <h6>LINK3</h6>
+            <h6>comida</h6>
           </Link>
-          <span>{currentUser?.username}</span>
-          {currentUser ? (
-            <span onClick={logout}>Logout</span>
-          ) : (
-            <Link className="link" to="/login">
-              Login
-            </Link>
-          )}
+
           <span className="write">
             <Link className="link" to="/write">
-              Write
+
+              {currentUser ? (
+                  <span>
+                              <span className="separetor">
+                             |
+                              </span>
+                      Postar
+                  </span>
+              ) : (
+                  <span>  </span>
+              )}
+
             </Link>
           </span>
+          <span className="logado">[   {currentUser?.username}   ]</span>
+          {currentUser ? (
+            <span onClick={logout} className="logout">  ↪️ </span>
+          ) : (
+            <Link className="link" to="/login">              Login            </Link>
+          )}
+
         </div>
       </div>
     </div>
